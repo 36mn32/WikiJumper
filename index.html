@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f3ed">
+    <meta name="description" content="How far can you travel through Wikipedia? Follow the links and see where you end up.">
+    <title>WikiJumper — Follow the rabbit hole</title>
+    <link rel="preconnect" href="https://en.wikipedia.org">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="WikiJumper home">
+          <span class="wordmark-mark" aria-hidden="true">W</span>
+          <span>wikijumper<span class="wordmark-period">.</span></span>
+        </a>
+        <div class="topbar-note"><span class="live-dot" aria-hidden="true"></span> A little game for curious minds</div>
+      </header>
+
+      <section class="game-layout" aria-label="Wikipedia link game">
+        <div class="game-column">
+          <div class="eyebrow"><span class="eyebrow-line"></span> THE WIKIPEDIA WANDER</div>
+          <h1>One link leads<br>to <span>anywhere.</span></h1>
+          <p class="intro">Follow the thread. Name an article linked from this page to keep your journey going.</p>
+
+          <section class="article-card" aria-label="Current Wikipedia article">
+            <div class="article-image-wrap" id="image-wrap">
+              <img class="article-image" id="article-image" alt="" hidden>
+              <div class="image-fallback" id="image-fallback" aria-hidden="true">
+                <span class="fallback-orbit orbit-one"></span>
+                <span class="fallback-orbit orbit-two"></span>
+                <span class="fallback-letter">W</span>
+                <span class="image-caption">A window into another world</span>
+              </div>
+              <div class="image-shade"></div>
+              <div class="article-tag"><span class="tag-spark" aria-hidden="true">✳</span> YOUR ARTICLE</div>
+              <a class="wiki-link" id="wiki-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Read this article on Wikipedia">↗</a>
+            </div>
+            <div class="article-info">
+              <div class="article-label">YOU ARE READING ABOUT</div>
+              <h2 id="article-title">Getting your first page…</h2>
+              <div class="article-meta">
+                <span class="wiki-mark" aria-hidden="true">W</span>
+                <span>Wikipedia</span>
+                <span class="meta-separator" aria-hidden="true">·</span>
+                <span id="link-count">Finding your next paths</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="answer-area" id="answer-area" aria-labelledby="answer-label">
+            <label class="answer-label" id="answer-label" for="answer-input"><span class="step-number">01</span> WHERE WILL YOU GO NEXT?</label>
+            <form class="answer-form" id="answer-form" autocomplete="off">
+              <div class="input-wrap">
+                <span class="input-search" aria-hidden="true">⌕</span>
+                <input id="answer-input" name="answer" type="text" placeholder="Type a linked article…" aria-describedby="answer-help game-message" disabled>
+                <button class="submit-button" id="submit-button" type="submit" disabled><span>Go</span><span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+            <p class="answer-help" id="answer-help">Enter an article title that appears as a link on this page.</p>
+            <p class="game-message" id="game-message" role="status" aria-live="polite"></p>
+          </section>
+
+          <section class="game-over" id="game-over" aria-labelledby="game-over-title" hidden>
+            <div class="game-over-heading"><span class="game-over-icon" aria-hidden="true">↗</span><span>END OF THE TRAIL</span></div>
+            <h2 id="game-over-title">Every rabbit hole<br>has a <span>bottom.</span></h2>
+            <p id="game-over-copy">That link wasn't on the page. The journey ends here, but there's always another one.</p>
+            <button class="play-again-button" id="play-again" type="button">Start a new journey <span aria-hidden="true">↗</span></button>
+          </section>
+        </div>
+
+        <aside class="journey-column" aria-label="Your journey">
+          <div class="journey-top">
+            <span class="journey-eyebrow">YOUR JOURNEY</span>
+            <span class="journey-live"><span class="live-dot" aria-hidden="true"></span> IN PROGRESS</span>
+          </div>
+          <div class="score-block">
+            <span class="score-label">LINKS FOLLOWED</span>
+            <div class="score-number" id="score" aria-live="polite">00</div>
+            <span class="score-caption">and counting<span class="score-star">✳</span></span>
+            <div class="best-score">
+              <span>PERSONAL BEST</span>
+              <strong id="high-score" aria-live="polite">00</strong>
+            </div>
+          </div>
+          <div class="journey-divider"></div>
+          <div class="trail-heading"><span>YOUR TRAIL</span><span id="trail-count">01 PAGE</span></div>
+          <ol class="trail-list" id="trail-list" aria-label="Articles in your journey">
+            <li class="trail-item trail-current">
+              <span class="trail-marker"><span></span></span>
+              <span class="trail-title">Waiting for your first page…</span>
+            </li>
+          </ol>
+          <div class="trail-bottom">
+            <div class="trail-bottom-icon" aria-hidden="true">↳</div>
+            <p>Every article is a doorway.<br>Follow yours wherever it leads.</p>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>MADE FOR THE JOY OF GETTING LOST</span>
+        <span>POWERED BY <a href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">WIKIPEDIA</a></span>
+      </footer>
+    </main>
+  </body>
+</html>
